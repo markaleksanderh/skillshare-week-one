@@ -62,7 +62,11 @@ Before we get started, create a directory on your computer where you want to sto
 
 ## Let's begin!
 
-Open up 
+Open up Terminal and type `pwd`. You should be in `/Users/<username>`. 
+Enter `mkdir <directory name>` to create a new directory, e.g. `mkdir skillshare`.
+Move to the directory you've just created by typing `cd <directory name>`, e.g. `cd skillshare`.
+
+First, you'll want to our index HTML page, so go ahead and type `touch index.html`.
 
 
 ## HTML
@@ -72,3 +76,17 @@ Open up
 ## CSS
 
 ...
+
+### Working with Webfonts
+
+
+### Working with Frameworks
+
+
+
+---
+
+## Stretch goal
+
+1. Create a design for a page in Figma and try to recreate it in HTML and CSS.
+2. Check your design across different browsers. Does the design look the same across all browsers? If not, how might you fix it?
