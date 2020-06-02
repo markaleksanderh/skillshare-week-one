@@ -62,11 +62,39 @@ Before we get started, create a directory on your computer where you want to sto
 
 ## Let's begin!
 
-Open up Terminal and type `pwd`. You should be in `/Users/<username>`. 
+Open up Terminal in VSCode and type `pwd`. You should be in `/Users/<username>`. 
 Enter `mkdir <directory name>` to create a new directory, e.g. `mkdir skillshare`.
 Move to the directory you've just created by typing `cd <directory name>`, e.g. `cd skillshare`.
 
 First, you'll want to our index HTML page, so go ahead and type `touch index.html`.
+
+
+
+You have one of two options for viewing your HTML page in Chrome (or any other browser).
+1. Open your browser and go to File > Open file. Navigate to the HTML file you want to view and open.
+2. Setup a local server (Recommended). Your Mac should have both PHP and Python 2.x installed. For PHP enter `php -S localhost:8000`. For Python enter `python -m SimpleHTTPServer 8000`. Both will start a HTTP server on port 8000. Once your done, open up a browser tab and enter `localhost:8000` into the search bar.
+
+Let's make a basic _Hello, World!_ page to make sure everything is working correctly.
+
+In your `index.html` page, enter the following code:
+
+```
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Hello, World!</title>
+    </head>
+    <body>
+        <h1>Hello, World!</h1>
+    </body>
+</html>
+```
+
+Refresh your browser. You should see the following in your browser:
+
+![alt text](tutorial-images/helloworld.png)
+
 
 
 ## HTML
