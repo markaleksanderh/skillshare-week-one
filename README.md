@@ -121,6 +121,8 @@ The next line `<html lang="en">` is the root element of the document. The `lang=
 
 Next, we see the `head` element. This element contains all the metadata related to a document (essentially data that isn't displayed when a user opens their browser).
 
+#### Meta tags
+
 There is a broad range of metadata we may need to add to the `head` element. Examples include:
 
 - `charset` which tells the browser which character encoding the document uses. `utf-8` supports pretty much any language we'll need so it's unlikely we'll need to use another character set.
@@ -129,7 +131,13 @@ There is a broad range of metadata we may need to add to the `head` element. Exa
 
 - Images and description that's displayed when a user posts your site in a tweet on Twitter. `<meta name="twitter:card" content="summary"></meta>`
 
+### Title
 
+The head is also where we declare the document title. The document title will appear in the browser tab and if a user saves the webpage in their bookmarks.
+
+It's also possible to set the document title dynamically but we'll cover that later.
+
+### External files
 
 The `head` element is also where we will link to our CSS document:
 
