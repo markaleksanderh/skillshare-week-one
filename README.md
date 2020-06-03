@@ -164,6 +164,7 @@ Now that we've covered the basics, let's get on with building our first web page
 
 ***
 
+Add image of the site we want to create.
 
 ## HTML
 
@@ -173,6 +174,12 @@ Now that we've covered the basics, let's get on with building our first web page
 
 CSS stands for _cascading style sheets_. Meaning - 
 
+CSS uses a different syntax from HTML.
+Propety + syntax
+Selector + declaration block
+
+
+
 There are three ways of adding style to an element.
 
 - Inline - style is added as an attribute to a tag, e.g. `<p style="color: red;>"`.
@@ -181,7 +188,56 @@ There are three ways of adding style to an element.
 
 Generally speaking, you should never use inline styles because it's too difficult to maintain. I'd also recommending avoiding embedded styles unless you're working on a very small proof of concept and need to save time. You'll find it easier and cleaner to contain all your styles in a different sheet, so that's what we'll do here.
 
-CSS uses a different syntax from HTML.
+
+
+
+### IDs and Classes
+
+In order to select a single element, use an ID. The ID is added to the individual HTML element you wish to select. As a rule, an ID should only be used once on the page.
+
+ID is added as an attribute to the opening tag and selected from CSS:
+
+#### HTML
+```
+<h1 id="page-title">
+```
+#### CSS
+```
+#page-title {
+    margin: 5px;
+}
+```
+
+Best practice dictates that we include the element type when selecting the element in CSS. This will make it easier to identify which element you're referring to when editing your CSS later.
+
+```
+h1#page-title{
+    margin: 5px;
+}
+```
+
+Alternatively, if you expect to use an element more than once on the same page, use a class.
+
+#### HTML
+```
+<p class="body-text">
+```
+
+#### CSS
+```
+.body-text {
+    font-size: 12px;
+}
+```
+
+As with IDs, we can skip the element name but it's good practice to include it.
+
+```
+p.body-text {
+    font-size: 12px;
+}
+```
+
 
 ### Working with Webfonts
 
