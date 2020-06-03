@@ -6,6 +6,10 @@
 2. Become familiar with using the Terminal to create files and navigate through directories.
 3. Become familiar with the basics of HTML and CSS by creating a static blog style webpage.
 
+There is quite a lot to cover here so if we spend two weeks going over it that's fine!
+
+***
+
 ## Setup
 
 This week we're going to begin learning the basics of HTML and CSS, but first we need to install three applications.
@@ -29,9 +33,11 @@ Next, we need to install a text editor. I recommend using VSCode, but you could 
 To install VSCode, head to `https://code.visualstudio.com/docs/setup/mac`.
 
 
+***
+
 ## Task
 
-We're going to setup a static web page that displays the first few paragraphs of Franz Kafka's Metamorphosis. We'll add a few paragraphs and images.
+We're going to setup a static web page that displays the first few paragraphs of Franz Kafka's Metamorphosis. We'll add a few paragraphs and images. Feel free to choose your own sample text and images.
 
 The idea here is to get familiar with the structure of HTML and CSS.
 
@@ -39,7 +45,7 @@ The idea here is to get familiar with the structure of HTML and CSS.
 
 Open VSCode from your applications folder. Go to _Terminal_ and click _New Terminal_.
 
-Though it can be a little intimidating at first, using Terminal will massively speed up your development and you'll 
+Though it may be a little intimidating at first, using Terminal will massively speed up your development and you'll become more comfortable with it the more time you spend using it.
 
 The following commands will come in handy:
 
@@ -47,36 +53,40 @@ The following commands will come in handy:
 | ------- | ------- |
 | `pwd`   | Print working directory, i.e. prints the name of the directory you're in. |
 | `ls`    | Returns a list of directories and files in the current directory |
-| `cd`    | Change directory. Type `cd` followed by a space and the directory you want to move into, e.g. `cd app` |
+| `cd`    | Change directory. Type `cd` followed by a space and the directory you want to move into, e.g. `cd app` . Use `cd .. ` to navigate back to the immediately preceding directory. |
 | `mkdir` | Make directory. Type `mkdir` followed by a space and the name of the directory you want to make. e.g. `mkdir workspace` |
 | `touch` | Creates a file. Type `touch` followed by the name of the file you want to create. Be sure to include the filetype e.g. `index.html` rather than `index`. |
 | `rm` | Deletes a file. Type `rm` followed by space and the file you want to delete, e.g. `rm index.html`.
 | `rmdir` | Deletes a directory. Type `rmdir` followed by space and the directory you want to delete, .e.g `rmdir styles` |
+| `pwd` | Print working directory. Prints the directory you're in. |
 
 
-To find out which directory you're in, type `pwd` (for _print working directory_).
+***
 
-Before we get started, create a directory on your computer where you want to store all your work (something like "workspace" should suffice).
-
----
 
 ## Let's begin!
 
-Open up Terminal in VSCode and type `pwd`. You should be in `/Users/<username>`. 
+Select Terminal in the menu in VSCode and select New Terminal to open a new terminal window. If you type `pwd` you should be in `/Users/<username>`.
+
 Enter `mkdir <directory name>` to create a new directory, e.g. `mkdir skillshare`.
 Move to the directory you've just created by typing `cd <directory name>`, e.g. `cd skillshare`.
 
-First, you'll want to our index HTML page, so go ahead and type `touch index.html`.
+First, you'll want to create our index HTML page, so go ahead and type `touch index.html`.
 
 
+### Viewing your document
 
 You have one of two options for viewing your HTML page in Chrome (or any other browser).
+
 1. Open your browser and go to File > Open file. Navigate to the HTML file you want to view and open.
-2. Setup a local server (Recommended). Your Mac should have both PHP and Python 2.x installed. For PHP enter `php -S localhost:8000`. For Python enter `python -m SimpleHTTPServer 8000`. Both will start a HTTP server on port 8000. Once your done, open up a browser tab and enter `localhost:8000` into the search bar.
 
-Let's make a basic _Hello, World!_ page to make sure everything is working correctly.
+2. Setup a local server **(Recommended)**. Your Mac should have both PHP and Python 2.x installed. For PHP enter `php -S localhost:8000`. For Python enter `python -m SimpleHTTPServer 8000`. Both will start a HTTP server on port 8000. Once your done, open up a browser tab and enter `localhost:8000` into the search bar. When you enter this command, the script will look for a file named either `index.html` or `index.htm` so make sure your HTML file is named correctly!
 
-In your `index.html` page, enter the following code:
+Let's make a basic _Hello, World!_ page to make sure everything is working correctly (FYI displaying _Hello, World!_ is usually the first thing you learn when learning _any_ new language).
+
+
+Let's go back to our `index.html` page. Open it up in VSCode and enter the following code:
+
 
 ```
 <!DOCTYPE html>
@@ -97,18 +107,89 @@ Refresh your browser. You should see the following in your browser:
 
 
 
+Let's dissect the code above to understand what's going on.
+
+### Document type
+
+The first line `<!DOCTYPE html>` is called a document type declaration. It's unlikely we'll need to look at any other document type (e.g. XML) during this Skillshare, so it should be sufficient to just remember we need to include this as the first line of the HTML document.
+
+The next line `<html lang="en">` is the root element of the document. The `lang="en"` attribute declares that the document is in English (important for accessibility).
+
+
+
+### Head
+
+Next, we see the `head` element. This element contains all the metadata related to a document (essentially data that isn't displayed when a user opens their browser).
+
+There is a broad range of metadata we may need to add to the `head` element. Examples include:
+
+- `charset` which tells the browser which character encoding the document uses. `utf-8` supports pretty much any language we'll need so it's unlikely we'll need to use another character set.
+
+- Keywords metadata (how search engines would find your page ~20 years ago). `<meta name="keywords" content="Skillshare, Skill, Share, HTML, CSS">`. For various reasons (e.g. keyword stuffing), this is rarely used and not recommended.
+
+- Images and description that's displayed when a user posts your site in a tweet on Twitter. `<meta name="twitter:card" content="summary"></meta>`
+
+
+
+The `head` element is also where we will link to our CSS document:
+
+`<link rel="stylesheet" href="styles.css">`
+
+The `rel` attribute denotes the relationship of the link to the document whereas `href` or _hypertext reference_ specifies the location of the resource (e.g. stylesheet, icon, document).
+
+You'll use similar markup to declare your favicon:
+
+`<link rel="shortcut icon" href="/favicon.ico">`
+
+If we were including JavaScript, the `head` would also be where we would include a link to our scripts `<script src="index.js">`, but more of that later.
+
+
+
+### Body
+
+
+You may have noticed that each element in the code has both an opening `<>` tag and a closing `</>` tag. The tags appearing beneath (and helpfully indented by most text editors) are contained within the preceding element.
+
+A word on terminology here:
+
+- Tag: `<p>`
+- Element: `<p></p>`
+
+Some elements do not require closing tags and are called _empty elements_, e.g. a line break `<br>` or an image `<img>`.
+
+
+
+
+Now that we've covered the basics, let's get on with building our first web page.
+
+***
+
+
 ## HTML
 
 ...
 
 ## CSS
 
-...
+CSS stands for _cascading style sheets_. Meaning - 
+
+As I mentioned earlier, we will link to our stylesheet using the `link` tag. In truth, it's possible to write the stylesheet straight into the `head` in between `<style></style>` tags. However, you'll find it easier and cleaner to contain all your styles in a different sheet.
+
 
 ### Working with Webfonts
 
 
+Cover web safe fonts.
+Google Fonts.
+
+
 ### Working with Frameworks
+
+Bootstrap.
+Ionic.
+
+Positives, negatives.
+
 
 
 
