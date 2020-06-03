@@ -173,8 +173,15 @@ Now that we've covered the basics, let's get on with building our first web page
 
 CSS stands for _cascading style sheets_. Meaning - 
 
-As I mentioned earlier, we will link to our stylesheet using the `link` tag. In truth, it's possible to write the stylesheet straight into the `head` in between `<style></style>` tags. However, you'll find it easier and cleaner to contain all your styles in a different sheet.
+There are three ways of adding style to an element.
 
+- Inline - style is added as an attribute to a tag, e.g. `<p style="color: red;>"`.
+- Embedded - style is added between `style` tags in the header, e.g. `<style> p { color: red; }</style>`.
+- External - styles added in a separate sheet and referred to using the `link` tag, e.g. `p { color: red; }`.
+
+Generally speaking, you should never use inline styles because it's too difficult to maintain. I'd also recommending avoiding embedded styles unless you're working on a very small proof of concept and need to save time. You'll find it easier and cleaner to contain all your styles in a different sheet, so that's what we'll do here.
+
+CSS uses a different syntax from HTML.
 
 ### Working with Webfonts
 
