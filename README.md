@@ -66,10 +66,14 @@ The following commands will come in handy:
 
 ## Let's begin!
 
-Select Terminal in the menu in VSCode and select New Terminal to open a new terminal window. If you type `pwd` you should be in `/Users/<username>`.
+Select Terminal in the menu in VSCode and select New Terminal to open a new terminal window. If you type `pwd` you should be in `/Users/<username>`, where `<username>` is the name of the account on your computer.
 
 Enter `mkdir <directory name>` to create a new directory, e.g. `mkdir skillshare`.
 Move to the directory you've just created by typing `cd <directory name>`, e.g. `cd skillshare`.
+
+Since we'll be going through different topics week by week, it's a good idea to create directories for each week, so go ahead and type `mkdir week-one` and `cd` into that directory with `cd week-one`.
+
+If you type `pwd` again you should see something like `/Users/<username>/skillshare/week-one`.
 
 First, you'll want to create our index HTML page, so go ahead and type `touch index.html`.
 
@@ -80,7 +84,19 @@ You have one of two options for viewing your HTML page in Chrome (or any other b
 
 1. Open your browser and go to File > Open file. Navigate to the HTML file you want to view and open.
 
-2. Setup a local server **(Recommended)**. Your Mac should have both PHP and Python 2.x installed. For PHP enter `php -S localhost:8000`. For Python enter `python -m SimpleHTTPServer 8000`. Both will start a HTTP server on port 8000. Once your done, open up a browser tab and enter `localhost:8000` into the search bar. When you enter this command, the script will look for a file named either `index.html` or `index.htm` so make sure your HTML file is named correctly!
+2. Setup a local server **(Recommended)**. Your Mac should have both PHP and Python 2.x installed. For PHP enter `php -S localhost:8000`. For Python enter `python -m SimpleHTTPServer 8000`. Both will start a HTTP server on port 8000. 
+
+You should see the following in your Terminal window:
+
+![alt text](tutorial-images/serverrunning.png)
+
+Now open up a browser tab and enter `localhost:8000` into the search bar. When you enter this command, the script will look for a file named either `index.html` or `index.htm` so make sure your HTML file is named correctly!
+
+You might want to split your Terminal window to allow you to run the local server and continue to create files and move between directories, so click the Split Terminal icon to open another Terminal.
+
+![alt text](tutorial-images/splitterminal.png)
+
+
 
 Let's make a basic _Hello, World!_ page to make sure everything is working correctly (FYI displaying _Hello, World!_ is usually the first thing you learn when learning _any_ new language).
 
@@ -101,7 +117,7 @@ Let's go back to our `index.html` page. Open it up in VSCode and enter the follo
 </html>
 ```
 
-Refresh your browser. You should see the following in your browser:
+Now when you refresh your browser and you should see the following:
 
 ![alt text](tutorial-images/helloworld.png)
 
