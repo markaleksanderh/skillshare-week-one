@@ -480,6 +480,54 @@ p {
 
 ### Images
 
+Let's make our page a little more interesting by adding some images.
+
+First, create an `images` folder and add your images to it.
+
+Next, you'll use the `<img>` element to create an image. You'll notice this element doesn't require a closing tag. The `<img>` element, along with `<br>` is called an _empty element_.
+
+We add the images by using the `src` source attribute. Be sure to include the directory in the address.
+
+Add your images between the paragraph elements.
+
+```
+<p>After the meal the ... </p>
+<img src="images/story-image-1.jpg">
+<p>When they reached the mansion ... </p>
+<p>The Country Mouse stopped ... </p>
+<img src="images/story-image-2.jpg">
+
+```
+
+When you refresh your browser, you'll notice the images appear at original size on a new line. `<img>` elements are what are called _block level_ elements.
+
+To make the images flow within the text we need to add a float to each image element.
+
+To make sure we're selecting each image correctly, let's add a class to each. I added the classes `image-wrap-left` and `image-wrap-right` depending on whether I wanted the image to float on the left or the right. To the former class I add `float: left;` and to the latter I add `float: right;`.
+
+Let's also declare a `width` attribute to our images. We don't need to add a `height` attribute; instead the height will adjust accordingly.
+
+```
+img.image-wrap-left {
+    float: left;
+    width: 280px;
+}
+
+img.image-wrap-right {
+    float: right;
+    width: 280px;
+}
+```
+
+### Margins
+
+You'll notice that the text edges right up to the edges of the image, so let's add a margin like we did with `div.container`.
+
+However, we need to make sure the margin
+
+There are multiple options here.
+
+
 
 
 ### Working with Frameworks
