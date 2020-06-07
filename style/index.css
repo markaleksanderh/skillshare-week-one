@@ -1,32 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Eczar&family=Gentium+Basic&display=swap');
 
-/* div.container {
-    width: 720px;
+div.container {
+    width: 700px;
     margin: 0 auto;
-} */
-
-h1, h2 {
-    font-family: 'Eczar';
 }
 
+h1, h2 {
+    font-family: 'Eczar', 'Times New Roman', serif;
+}
 
-/* h1 {
-    width: 450px;
-    font-size: 42.97px;
+p {
+    font-family: 'Gentium Basic', 'Times New Roman', serif;
+    font-size: 24px;
+    line-height: 36px;
+}
+
+h1 {
+
+    font-size: 37.5px;
 }
 
 h2 {
-    font-size: 27.5px;
-} */
-
-p {
-    font-family: 'Gentium Basic';
-    font-size: 22px;
-    line-height: 32px;
+    font-size: 30px;
 }
 
 
-/* img.image-wrap-left {
+
+
+/*
+
+img.image-wrap-left {
     float: left;
     width: 280px;
     margin: 6px 24px 6px 0px;

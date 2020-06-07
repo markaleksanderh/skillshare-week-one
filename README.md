@@ -294,18 +294,19 @@ Once you're done adding all the paragraphs, load the local server and navigate t
 ![alt text](tutorial-images/nocss.png)
 
 
-
+There are still a few elements we can add here (e.g. images) but for now, let's begin adding CSS.
 
 
 ## CSS
 
+First, some background
 CSS stands for _cascading style sheets_. Meaning - 
+
+Prior to CSS, `table` elements were used to structure HTML documents and on rare occasions you can still see tables used in this way (if you see a site the looks like it came out the late 90s, open up the developer console and check!).
 
 CSS uses a different syntax from HTML.
 Propety + syntax
 Selector + declaration block
-
-
 
 There are three ways of adding style to an element.
 
@@ -314,8 +315,6 @@ There are three ways of adding style to an element.
 - External - styles added in a separate sheet and referred to using the `link` tag, e.g. `p { color: red; }`.
 
 Generally speaking, you should never use inline styles because it's too difficult to maintain. I'd also recommending avoiding embedded styles unless you're working on a very small proof of concept and need to save time. You'll find it easier and cleaner to contain all your styles in a different sheet, so that's what we'll do here.
-
-
 
 
 ### IDs and Classes
@@ -365,12 +364,122 @@ p.body-text {
 }
 ```
 
+Now with that out the way, let's style our first element.
+
+We'll start with the `div.container`. There are two things we need to do here. First, we want to centre our content and we do that by setting the top and bottom margins of `div.container` to `0` and the left and right margins to `auto`.
+
+Reload your browser and you should see the content appears in the centre.
+
 
 ### Working with Webfonts
 
+You'll notice that the browser default to showing our text in Times New Roman. Times New Roman, like Arial, Courier are what are called _web safe fonts_ meaning they're pre-installed on most devices.
 
-Cover web safe fonts.
-Google Fonts.
+However, we can now use web fonts from third parties like Google Fonts or Adobe Typekit.
+
+There are a number of options for including web fonts.
+- Add the `ttf` or `otf` font files to your local directory and reference them from your CSS.
+- Link to the CSS file of the font.
+- (Preferred) include an `@import` in your stylesheet and import the front directly from Google Fonts (or Adobe Typekit).
+
+Go over to Google Fonts and find a good font pairing for your site. I chose Eczar for my headings and Gentium Basic for my body text. Click _download fonts_, select _embed_, and  _@import_. Copy the CSS from between the `<style>` tags and paste it into the top of your `index.css` stylesheet.
+
+```
+@import url('https://fonts.googleapis.com/css2?family=Eczar&family=Gentium+Basic&display=swap');
+```
+
+![alt text](tutorial-images/fonts.png)
+
+
+The next thing we need to do is determine which elements should use which fonts by using the `font-family` attribute. You _can_ declare it in the body tag, but I prefer to declare the elements individually.
+
+```
+p {
+    font-family: 'Gentium Basic';
+}
+```
+
+We also need want to use Eczar for both our headings tags. To select multiple elements, we declare both of the element names separated by a comma:
+
+```
+h1, h2 {
+    font-family: 'Eczar';
+}
+```
+
+The comma here is very important. Without the comma, the selection `h1 h2 { ... }` means a `h2` element that is contained within a `h1` element. 
+
+So far, your `index.css` file should look like this:
+
+```
+@import url('https://fonts.googleapis.com/css2?family=Eczar&family=Gentium+Basic&display=swap');
+
+div.container {
+    width: 768px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    font-family: 'Eczar';
+}
+
+p {
+    font-family: 'Gentium Basic';
+}
+```
+
+Reload your browser. Looks better already, no?
+
+#### Font stacks
+
+Though most browsers should have no problem rendering your web font as you intended, it's still good practice to declare fallback fonts. These are fonts that are similar to your chosen font and are declared in order.
+
+```
+h1, h2 {
+    font-family: 'Eczar', 'Times New Roman', serif;
+}
+```
+
+What this means is that if the browser fails to render the first font declared, it will try the next. If it can't find that system font, it will try the next, and so on until it finds `serif` or `sans-serif`. This is known as _graceful degradation_.
+
+
+
+For readability the maximum number of characters on a line is 65. Let's change our font size to make the text more presentable. To change font-size, use the `font-size` attribute. We're going declare are font-size attribute in pixels, but you can also use ems, percentages, absolute size values (e.g. `large`) or relative size values (i.e. relative to the parent element e.g. `larger`).
+
+#### Typescale
+
+I like to use the typescale calculator at https://type-scale.com/ and set my heading sizes relative to the body font size. I set my base size as 24px, h2 as 37.5px and h1 as 46.88px.
+
+Declare your font sizes like so:
+
+```
+p {
+    font-family: 'Gentium Basic';
+    font-size: 24px;
+}
+
+h1 {
+
+    font-size: 37.5px;
+}
+
+h2 {
+    font-size: 30px;
+}
+```
+
+You'll notice our paragraphs look a little tight, so add a `line-height` attribute to space each line.
+
+```
+p {
+    font-family: 'Gentium Basic';
+    font-size: 24px;
+    line-height: 36px;
+}
+```
+
+### Images
+
 
 
 ### Working with Frameworks
