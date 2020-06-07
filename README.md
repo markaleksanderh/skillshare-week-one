@@ -192,7 +192,110 @@ Add image of the site we want to create.
 
 ## HTML
 
-...
+Let's setup our blog page. I'm using the fable _The Town Mouse & the Country Mouse_ by Aesop for the text but you can use anything you like. If you want to use the text I used, you can copy and paste it from the `story.txt` file in the current repository.
+
+First things first, let's add our title to our `title` element.
+
+```
+<title>The Town Mouse & the Country Mouse</title>
+```
+
+First, we need to make sure we're using the correct tags for our content.
+
+### Semantic and generic elements
+
+We'll use the following elements in our page:
+- `div`
+- `article`
+- `section`
+- `main`
+- `header`
+- `footer`
+- `h1`
+- `h2`
+- `p`
+- `span`
+- `img`
+
+These tags can be split into roughly two groups: _semantic_ and _generic_.
+
+Semantic elements are useful for SEO and in assisting users with impaired visibility to use your page. The elements tell screen readers and search engines what the purpose of the element is.
+
+Some of the semantic elements will be fairly self-intuitive, i.e. `header` should be at the top of the page, `nav` is the navigation bar, and `footer` should sit at the bottom of the page.
+
+Used pretty flexibily.
+
+### Structure
+
+Let's begin setting out the basic structure of our page.
+
+```
+<div class="container">
+    <header>
+    </header>
+    <main>
+        <article>
+        </article>
+    </main>
+    <footer>
+    </footer>
+</div> 
+```
+
+First, we put all our content in a `div` with the class `container`. This will allow us later to centre all of the content contained within the `div` element. `div`s are generic elements. In fact, we really don't need to use the semantic tags to build our page but it's good practice to do so.
+
+The `header` is the container for things like site logo, `nav` navigation menu, contact details, social media links etc. Given that we're building a single page, we won't add much to our `header`.
+
+`main` should contain the body of the page and there should only be one `main` per page.
+
+`article` is a self-contained piece of content that could sit entirely on its own (think of a news story).
+
+`footer` can contain things like contact details, secondary navigation and usually contains things like privacy policy, legal notice etc.
+
+Notice that we haven't added any text at all to our page yet semantically it still has an identifiable structure.
+
+Let's go ahead and begin adding content to our elements.
+
+### Headings
+
+First, let's add a logo to our `header`. Add between your `header` tags:
+
+```
+<h2>SkillShare</h2>
+```
+
+We're using a `h2` heading here rather than `h1` because there can only be one `h1` heading (for SEO reasons). Let's also add `site-logo` as a class to the `h2` heading here so we're able to style it directly and also because we may want to use a `h2` with different styling elsewhere.
+
+```
+<h2 class="site-logo">SkillShare</h2>
+```
+
+Because our site is only going to have one article in it, we're free to use a `h1` class as the title of our `article`. If we expected to have muliple articles on the page, we should use a `h2` or `h3` heading.
+
+Let's add the `h1` element like so:
+
+```
+<article>
+    <h1>The Town Mouse & the Country Mouse</h1>
+</article>
+```
+
+Next, let's add our text paragraphs after our heading. Each paragraph needs to be between `<p></p>` tags, so add each paragraph like so:
+
+```
+<p>
+    A Town Mouse once visited a relative who lived in the country...
+</p>
+```
+
+Once you're done adding all the paragraphs, load the local server and navigate to your page. You'll notice the content sprawls across the width of the browser with no structure.
+
+
+![alt text](tutorial-images/nocss.png)
+
+
+
+
 
 ## CSS
 
